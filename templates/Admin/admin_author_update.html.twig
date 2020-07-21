@@ -1,0 +1,45 @@
+{% extends 'Admin/admin_base.html.twig' %}
+
+{% block content %}
+    {# j'affiche mon formulaire avec la fonction twig form, et en parametre le formulaire envoyé
+      depuis le controleur
+      {{ form(authorForm) }}
+       #}
+    <div class="block_formulaire1">
+        {{ form_start(authorForm) }}
+        <div class="block_formulaire">
+            {{ form_label(authorForm.firstName) }}
+            {{ form_widget(authorForm.firstName, {'attr': {'class': 'input'}}) }}
+            {{ form_errors((authorForm.firstName)) }}
+        </div>
+        <div class="block_formulaire">
+            {{ form_label(authorForm.lastName) }}
+            {{ form_widget(authorForm.lastName, {'attr': {'class': 'input'}}) }}
+            {{ form_errors(authorForm.lastName) }}
+        </div>
+        <div class="block_formulaire">
+            {{ form_label(authorForm.birthDate) }}
+            {{ form_widget(authorForm.birthDate,  {'attr': {'class': 'input'}}) }}
+            {{ form_errors(authorForm.birthDate) }}
+        </div>
+        <div class="block_formulaire">
+            {{ form_label(authorForm.deathDate) }}
+            {{ form_widget(authorForm.deathDate, {'attr': {'class': 'input'}}) }}
+            {{ form_errors(authorForm.deathDate) }}
+        </div>
+        {{ form_label(authorForm.biography) }}
+        <div class="block_formulaire_biography ">
+            {{ form_widget(authorForm.biography, {'attr': {'class': 'input_biography'}}) }}
+            {{ form_errors(authorForm.biography) }}
+        </div>
+        <div class="block_formulaire">
+            {{ form_label(authorForm.published) }}
+            {{ form_widget(authorForm.published, {'attr': {'class': 'input'}}) }}
+        </div>
+        <div class="block_formulaire">
+            {{ form_widget(authorForm.submit, {'attr': {'class': 'submit'}}) }}
+        </div>
+        {{ form_end(authorForm) }}
+    </div>
+{% endblock %}
+

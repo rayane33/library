@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    <link rel="stylesheet" href="{{ asset ('style.css') }}">
+</head>
+<body>
+<header>
+    <div class="block">
+        <div class="logo">
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2a28029a-3cbb-4479-9bb4-1964faf1e0d0/d773l18-ddc4377c-43e7-46c5-ae67-b56755ab2fdc.png/v1/fill/w_1024,h_576,strp/trafalgar_law_pirate_symbol_vector_by_spister_d773l18-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD01NzYiLCJwYXRoIjoiXC9mXC8yYTI4MDI5YS0zY2JiLTQ0NzktOWJiNC0xOTY0ZmFmMWUwZDBcL2Q3NzNsMTgtZGRjNDM3N2MtNDNlNy00NmM1LWFlNjctYjU2NzU1YWIyZmRjLnBuZyIsIndpZHRoIjoiPD0xMDI0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.lDoYki1KtjbTG21O_h19sylghtJUmeSkuexLdc_DcuY" alt="" class="image imgresp">
+        </div>
+        <div> <a href="{{ path("home") }}"><h1> Home</h1></a></div>
+        <div> <a href="{{ path("authors_list") }}"><h1>Authors</h1></a></div>
+        <div><a href="{{ path("books_list") }}"><h1>Books</h1></a></div>
+        <div><a href="{{ path("book_search_resume") }}"><h1>Search</h1></a></div>
+    </div>
+</header>
+    {% block content %}
+
+    {% endblock content %}
+<footer>
+    <h4>Pimper par RoRodu33 <3</h4>
+</footer>
+</body>
+</html>

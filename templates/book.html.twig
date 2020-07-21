@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="block">
+        <div class="book">
+            <p>{{ book.title }}</p>
+            <p>{{ book.nbPages }} pages</p>
+            <p>{{ book.genre.name }}</p>
+        </div>
+    </div>
+
+{% endblock content %}

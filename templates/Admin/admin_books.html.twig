@@ -1,0 +1,21 @@
+{% extends "Admin/admin_base.html.twig" %}
+
+{% block content %}
+    <div class="block">
+        {% for book in books %}
+            <div class="book">
+                <p>{{ book.title }}</p>
+                <p>{{ book.nbPages }} pages</p>
+                <p>{{ book.genre.name }}</p>
+                <a href="{{ path("admin_books") }}">Voir le livre </a>
+                <br>
+                <a class="edit" href="{{ path("admin_books_update", {"id":book.id}) }}"> <i class="fas fa-edit"></i>Modifier le livre </a>
+                <br>
+                <a class="supprimer" href="{{ path("admin_book_delete", {"id":book.id}) }}"> <i class="fas fa-times"></i> Supprimer le livre </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="ajout">
+        <a class= "ajouter" href="{{ path("admin_books_insert") }}"> Ajouter un livre  </a>
+    </div>
+{% endblock content %}

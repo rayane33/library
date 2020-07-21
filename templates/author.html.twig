@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="block">
+            <div class="author">
+                <p>{{ author.firstName }}</p>
+                <p>{{ author.lastName }}</p>
+                <p>Né le {{ author.birthDate|date("d M Y") }}</p>
+                {% if  author.deathDate  == NULL  %}
+                    <p></p>
+                {% else %}
+
+                    <p>Mort le {{ author.deathDate|date("d M Y") }}</p>
+                {% endif %}
+            </div>
+    </div>
+{% endblock content %}

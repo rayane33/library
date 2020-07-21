@@ -1,0 +1,26 @@
+
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="block">
+        {#
+          je créé un formulaire avec en méthode GET pour que
+          la valeur recherchée dans le formulaire
+          soit envoyée dans l'url en parametre avec le name, soit
+          ?search=xxxxxx
+      #}
+        <form action="" method="get">
+            <label for="">Recherche</label>
+            <input name="search" type="text">
+        </form>
+    </div>
+    <div class="block">
+        {% for book in books %}
+            <div class="book">
+                <p>{{ book.title }}</p>
+                <p>{{ book.nbPages }} pages</p>
+                <p>{{ book.genre.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

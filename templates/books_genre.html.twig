@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="block">
+        {% for book in books %}
+            <div class="book">
+                <p>{{ book.title }}</p>
+                <p>{{ book.nbPages }} pages</p>
+                <p>{{ book.genre.name }}</p>
+                <a href="{{ path("book_show", {"id":book.id}) }}">Voir le livre </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

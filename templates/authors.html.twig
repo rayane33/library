@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="block">
+        {% for author in authors %}
+            <div class="author">
+                <p>{{ author.firstName }}</p>
+                <p>{{ author.lastName }}</p>
+                <p>Né le {{ author.birthDate|date("d M Y") }}</p>
+                    {% if  author.deathDate  == NULL  %}
+                        <p></p>
+                    {% else %}
+                        <p>Mort le {{ author.deathDate|date("d M Y") }}</p>
+                    {% endif %}
+                <a href="{{ path("author_show",{"id":author.id} ) }}">Voir l'auteur</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

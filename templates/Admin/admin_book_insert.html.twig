@@ -1,0 +1,42 @@
+{% extends 'Admin/admin_base.html.twig' %}
+
+{% block content %}
+    {# j'affiche mon formulaire avec la fonction twig form, et en parametre le formulaire envoyé
+      depuis le controleur
+      {{ form(authorForm) }}
+       #}
+    <div class="block_formulaire1">
+        {{ form_start(bookForm) }}
+        <div class="block_formulaire">
+            {{ form_label(bookForm.title) }}
+            {{ form_widget(bookForm.title, {'attr': {'class': 'input'}}) }}
+            {{ form_errors(bookForm.title) }}
+        </div>
+        <div class="block_formulaire">
+            {{ form_label(bookForm.author) }}
+            {{ form_widget(bookForm.author, {'attr': {'class': 'input_resume'}}) }}
+            {{ form_errors(bookForm.author) }}
+
+
+        </div>
+        <div class="block_formulaire">
+            {{ form_label(bookForm.genre) }}
+            {{ form_widget(bookForm.genre, {'attr': {'class': 'input'}}) }}
+            {{ form_errors(bookForm.genre) }}
+        </div>
+        <div class="block_formulaire">
+            {{ form_label(bookForm.nbPages) }}
+            {{ form_widget(bookForm.nbPages,  {'attr': {'class': 'input'}}) }}
+            {{ form_errors(bookForm.nbPages) }}
+        </div>
+        <div class="block_formulaire">
+            {{ form_label(bookForm.resume) }}
+            {{ form_widget(bookForm.resume, {'attr': {'class': 'input_resume'}}) }}
+            {{ form_errors(bookForm.resume) }}
+        </div>
+        <div class="block_formulaire">
+            {{ form_widget(bookForm.submit, {'attr': {'class': 'submit'}}) }}
+        </div>
+        {{ form_end(bookForm) }}
+    </div>
+{% endblock %}

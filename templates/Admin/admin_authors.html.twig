@@ -1,0 +1,26 @@
+{% extends "Admin/admin_base.html.twig" %}
+
+{% block content %}
+    <div class="block">
+        {% for author in authors %}
+            <div class="author">
+                <p>{{ author.firstName }}</p>
+                <p>{{ author.lastName }}</p>
+                <p>Né le {{ author.birthDate|date("d M Y") }}</p>
+                {% if  author.deathDate  == NULL  %}
+                    <p></p>
+                {% else %}
+                    <p>Mort le {{ author.deathDate|date("d M Y") }}</p>
+                {% endif %}
+                <a href="{{ path("admin_authors" ) }}">Voir l'auteur</a>
+                <br>
+                <a class="edit" href="{{ path("admin_authors_update", {"id":author.id}) }}"> <i class="fas fa-edit"></i>Modifier l'auteur </a>
+                <br>
+                <a class="supprimer" href="{{ path("admin_author_delete",{"id":author.id} ) }}" ><i class="fas fa-times"></i> Supprimer l'auteur</a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="ajout">
+         <a class= "ajouter" href="{{ path("admin_authors_insert") }}">Ajouter un auteur</a>
+    </div>
+{% endblock content %}
