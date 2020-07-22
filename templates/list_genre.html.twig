@@ -1,6 +1,14 @@
-{% extends 'base.html.twig' %}
+<nav>
+{% for genres in genres %}
+    <ul>
+        <li class="deroulant"><a href=""><h1>Genre</h1></a>
+            <ul class="sous">
+                <li><a href="{{ path("books_list") }}"><p class="tamere">Manga</p></a></li>
+                <li><a href="{{ path("books_list") }}"><p class="tamere">Science Fiction</p></a></li>
+                <li><a href="{{ path("books_list") }}"><p class="tamere">Fantaisie</p></a></li>
+            </ul>
+        </li>
+    </ul>
+    {% endfor %}
 
-{% block content %}
-
-{% endblock %}
-
+</nav>

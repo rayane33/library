@@ -35,6 +35,11 @@
             {{ form_errors(bookForm.resume) }}
         </div>
         <div class="block_formulaire">
+            {{ form_label(bookForm.bookCover) }}
+            {{ form_widget(bookForm.bookCover, {'attr': {'class': ''}}) }}
+            {{ form_errors(bookForm.bookCover) }}
+        </div>
+        <div class="block_formulaire">
             {{ form_widget(bookForm.submit, {'attr': {'class': 'submit'}}) }}
         </div>
         {{ form_end(bookForm) }}

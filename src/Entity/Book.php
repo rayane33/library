@@ -49,7 +49,13 @@ class Book
      */
     private $Author;
 
-
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     *
+     * je créé une propriété de type string (une colonne varchar) pour stocker le nom de l'image
+     * pour chaque livre
+     */
+    private $bookCover;
 
     public function getId(): ?int
     {
@@ -119,6 +125,20 @@ class Book
 
         return $this;
     }
+    /**
+     * @return mixed
+     */
+    public function getBookCover()
+    {
+        return $this->bookCover;
+    }
 
+    /**
+     * @param mixed $bookCover
+     */
+    public function setBookCover($bookCover): void
+    {
+        $this->bookCover = $bookCover;
+    }
 
 }

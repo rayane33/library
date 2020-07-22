@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Repository\BookRepository;
+use App\Repository\GenreRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,17 +33,33 @@ class BookController extends AbstractController{
             "book"=> $book
         ]);
     }
+
+    public function listGenres (GenreRepository $genreRepository){
+        $genre = $genreRepository -> findOneBy(['name'=>$name]);
+
+        return $this -> render ("list_genre.html.twig",[
+            "genres" => $genre,
+        ]);
+    }
+
+
     /**
-     * @Route("/books/genre/{genre}", name="book_genre")
+     * @Route("/books/genre/{name}", name="book_genre")
      */
-    public function BookByGenre (BookRepository $bookRepository, $genre){
+    public function BookByGenre (BookRepository $bookRepository,
+                                 GenreRepository $genreRepository,
+                                 $name
+    ){
         // J'utilise le bookRepository et sa méthode findBy pour trouver un ou plusieurs livres en BDD
         // en fonction de la valeur d'une colonne ici genre
+        $genre = $genreRepository -> findOneBy(['name'=>$name]);
+
         $books = $bookRepository ->findBy([
             "genre" => $genre
         ]);
         return $this -> render ("books_genre.html.twig",[
             "books" => $books,
+            "genre" => $genre,
         ]);
     }
 

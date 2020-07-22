@@ -4,6 +4,7 @@
     <div class="block">
         {% for book in books %}
             <div class="book">
+                <img class="imgresp" src="{{  asset('uploads/book/'~book.bookCover) }}" alt="">
                 <p>{{ book.title }}</p>
                 <p>{{ book.nbPages }} pages</p>
                 <p>{{ book.genre.name }}</p>

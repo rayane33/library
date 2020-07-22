@@ -7,6 +7,7 @@ use App\Entity\Book;
 use App\Entity\Genre;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -35,6 +36,9 @@ class BookType extends AbstractType
                 }
             ])
             ->add('resume')
+            ->add('bookCover', FileType::class, [
+                'mapped' => false
+            ])
             ->add("submit", SubmitType::class ,[
                 "label" => "Envoyer"
             ])

@@ -16,6 +16,22 @@
         <div> <a href="{{ path("authors_list") }}"><h1>Authors</h1></a></div>
         <div><a href="{{ path("books_list") }}"><h1>Books</h1></a></div>
         <div><a href="{{ path("book_search_resume") }}"><h1>Search</h1></a></div>
+        <div>
+                <nav>
+
+                    <ul>
+                        <li class="deroulant"><a href=""><h1>Genre</h1></a>
+                            <ul class="sous">
+                                <li><a href="{{ path("books_list")}}"><p class="tamere">Manga</p></a></li>
+                                <li><a href="{{ path("books_list") }}"><p class="tamere">Science Fiction</p></a></li>
+                                <li><a href="{{ path("books_list") }}"><p class="tamere">Fantaisie</p></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+        </div>
+        <a href="{{ path("app_login") }}">Se connecter</a>
     </div>
 </header>
     {% block content %}
